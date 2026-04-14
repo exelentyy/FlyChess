@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.com
+
+[flychess.flychess]
+file_filter = lang/<lang>/LC_MESSAGES/flychess.po
+source_file = lang/flychess.pot
+source_lang = en
+

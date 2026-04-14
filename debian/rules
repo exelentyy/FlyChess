@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_clean::
+	dh_clean
+	$(RM) lang/*/LC_MESSAGES/*.mo
+
+override_dh_install:
+	dh_install
+	$(RM) -r debian/flychess/usr/bin
+	$(RM) debian/flychess/usr/share/flychess/LICENSE
+	$(RM) debian/flychess/usr/share/flychess/README.md
+	dh_install flychess /usr/games/
+	dh_install debian/flychess.xpm /usr/share/pixmaps
+
+override_dh_link:
+	dh_link
+	dh_link /usr/share/common-licenses/GPL-3 /usr/share/flychess/LICENSE
+	dh_link /usr/share/doc/flychess/README.md /usr/share/flychess/README.md
+
+override_dh_auto_test:

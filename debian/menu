@@ -1,0 +1,6 @@
+?package(flychess):needs="X11" \
+ section="Games/Board" \
+ title="flychess" \
+ longtitle="flychess - chess graphical user interface for several chess engines" \
+ command="/usr/games/flychess" \
+ icon="/usr/share/pixmaps/flychess.xpm"

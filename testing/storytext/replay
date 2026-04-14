@@ -1,0 +1,14 @@
+#!/bin/sh
+
+cp ~/.config/flychess/config ~/.config/flychess/config.saved
+rm ~/.config/flychess/config
+
+cd ~/flychess
+LANG=C PYTHONPATH=~/storytext/lib ~/storytext/bin/storytext \
+	--interface=gtk3 \
+	--delay=1 \
+	--mapfiles=testing/storytext/ui_map.conf \
+	--replay=testing/storytext/"$1" \
+./flychess
+
+cp ~/.config/flychess/config.saved ~/.config/flychess/config
