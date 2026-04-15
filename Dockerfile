@@ -18,7 +18,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Port, na którym działa PyChess (zmień jeśli używasz innego niż 8080)
-EXPOSE 8080
-
-# Komenda startowa (dostosuj do swojego głównego pliku, np. main.py lub app.py)
-CMD ["python", "pychess"]
+EXPOSE 7860
+CMD ["python", "pychess", "--port", "7860"] 
